@@ -1,72 +1,74 @@
 module.exports = function(grunt) {
 
-  grunt.initConfig({
+    // Project configuration.
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        uglify: {
+            main: {
+                src: 'js/<%= pkg.name %>.js',
+                dest: 'js/<%= pkg.name %>.min.js'
+            }
+        },
+        less: {
+            expanded: {
+                options: {
+                    paths: ["css"]
+                },
+                files: {
+                    "css/<%= pkg.name %>.css": "less/<%= pkg.name %>.less"
+                }
+            },
+            minified: {
+                options: {
+                    paths: ["css"],
+                    cleancss: true
+                },
+                files: {
+                    "css/<%= pkg.name %>.min.css": "less/<%= pkg.name %>.less"
+                }
+            }
+        },
+        banner: '/*!\n' +
+            ' * <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
+            ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+            ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
+            ' */\n',
+        usebanner: {
+            dist: {
+                options: {
+                    position: 'top',
+                    banner: '<%= banner %>'
+                },
+                files: {
+                    src: ['css/<%= pkg.name %>.css', 'css/<%= pkg.name %>.min.css', 'js/<%= pkg.name %>.min.js']
+                }
+            }
+        },
+        watch: {
+            scripts: {
+                files: ['js/<%= pkg.name %>.js'],
+                tasks: ['uglify'],
+                options: {
+                    spawn: false,
+                },
+            },
+            less: {
+                files: ['less/*.less'],
+                tasks: ['less'],
+                options: {
+                    spawn: false,
+                }
+            },
+        },
+    });
 
-    watch: {
-      options: {
-        spawn: false
-      },
-      sass: {
-        files: 'scss/*.scss',
-        tasks: ['sass', 'postcss', 'bsReload:css']
-      },
-      html: {
-        files: '*.html',
-        tasks: ['bsReload:all']
-      }
-    },
+    // Load the plugins.
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-banner');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    sass: {
-      options: {
-        precision: 6,
-        sourceComments: false
-      },
-      dist: {
-        files: {
-          'css/cayman.css': 'scss/cayman.scss'
-        }
-      }
-    },
-
-    postcss: {
-      options: {
-        processors: [
-          require('autoprefixer')({browsers: ['last 2 versions', 'ie 8', 'ie 9']})
-        ]
-      },
-      dist: {
-        files: {
-          'css/cayman.css': 'css/cayman.css'
-        }
-      }
-    },
-
-    browserSync: {
-      dev: {
-        options: {
-          server: "./",
-          background: true
-        }
-      }
-    },
-
-    bsReload: {
-      css: {
-        reload: "cayman.css"
-      },
-      all: {
-        reload: true
-      }
-    }
-  });
-
-  // Load dependencies
-  grunt.loadNpmTasks('grunt-browser-sync');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-sass');
-
-  // Generate and format the CSS
-  grunt.registerTask('default', ['browserSync', 'watch']);
+    // Default task(s).
+    grunt.registerTask('default', ['uglify', 'less', 'usebanner']);
 
 };
