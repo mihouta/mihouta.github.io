@@ -44,41 +44,41 @@ subtitle: 我的工作流分享
 
 ## 第三步 网络搜索
  
-#### 1. 各大正版电子书网站
+### 1. 各大正版电子书网站
 
 跟知识密度相比，电子书的价格可谓极其低廉。因此寻找一本电子书的第一步，不妨是各大正版资源，尤其如果订阅了Kindle Unlimited和知乎读书会等会员计划的话，可能有免费借阅的版本。关于正版电子书搜索，目前我没有找到聚合搜索引擎（欢迎推荐），常去的几个如下：
-	- [Kindle电子书](https://www.amazon.cn/Kindle%E7%94%B5%E5%AD%90%E4%B9%A6/b/ref=sa_menu_kindle_l2_116169071?ie=UTF8&node=116169071)
-	- [豆瓣阅读](https://read.douban.com/)
-	- [知乎书店](https://www.zhihu.com/pub/)
+ - [Kindle电子书](https://www.amazon.cn/Kindle%E7%94%B5%E5%AD%90%E4%B9%A6/b/ref=sa_menu_kindle_l2_116169071?ie=UTF8&node=116169071)
+ - [豆瓣阅读](https://read.douban.com/)
+ - [知乎书店](https://www.zhihu.com/pub/)
 
-#### 2. 鸠摩搜书
+### 2. 鸠摩搜书
 
 非正版电子书搜索，我一般会从[鸠摩搜书](https://www.jiumodiary.com/)开始，简单且有效，如果能在这里一站解决，也少了后面很多麻烦。
 
-#### 3. E-ink板块
+### 3. E-ink板块
 
 鸠摩找不到的书，下一站我会前往[HiPDA](https://www.hi-pda.com/forum/)的E-ink板块，这是资深的电子墨水技术、设备及资源的讨论社区，注册后可以搜索。
 
-#### 4. 网上电子书库
+### 4. 网上电子书库
 
-这些年也收集了不少网上的电子书库资源，浮浮沉沉，关关开开，截至目前（2019年1月）收藏夹中可用网站有：
+这些年也收集了不少网上的电子书库资源，浮浮沉沉，关关开开，截至目前（2019年2月）收藏夹中可用网站有：
 - [SoBooks](https://sobooks.cc/)
 - [ebooks](https://ebooks.run/)
 - [我的小书屋](http://mebook.cc/)
 - [好读](http://www.haodoo.net/)
 - [亿年书海](https://www.inien.com/w/#/Index)
 
-#### 5. 网盘搜索
+### 5. 网盘搜索
 
 直接对百度网盘进行检索，也是一种简单粗暴的方法，结果良莠不齐，筛选成本高，适合一些难找的书籍和扫描版书籍。
 - [搜白度盘](http://www.sobaidupan.com/)
 - [盘搜](http://www.pansou.com/)
 
-#### 6. 淘宝和微信搜索
+### 6. 淘宝和微信搜索
 
 在寻找某些专业书籍，尤其是扫描版书籍时，可以考虑万能的大淘宝，花上几块钱能解决的问题，也没有必要自己折腾。另外由于版权原因，淘宝有时会有过滤，这时可以试试看微信顶部的搜索。作为一个“Walled garden"，有时微信公众号也会给人意外的惊喜。
 
-#### 7. 英文电子书
+### 7. 英文电子书
 
 这一块研究不多，一些资源参考如下：
 
@@ -88,7 +88,7 @@ subtitle: 我的工作流分享
 - [Library Genesis](http://gen.lib.rus.ec/)，俄罗斯的一个电子书库。
 - 使用[Usenet](https://baike.baidu.com/item/Usenet%E6%96%B0%E9%97%BB%E7%BB%84)方式下载，对于不熟悉的人来说，这是一个新的世界，也是在欧美这些版权保护非常成熟的地方，人们下载资源的一种方式。有英文书籍需求的人，可以先试试看用[NZBIndex](http://www.nzbindex.com/)网站来搜索是否有资源，如果确实有的话，自行学习研究Usenet相关知识。简单来说，多数方案是需要收费的，但是入门后很省心。
 
-#### 8. 特定种类书籍
+### 8. 特定种类书籍
 
 - 杂志，推荐以下渠道：
   - [海盗湾](https://thepiratebay.org/)，可以下载每月新的欧美杂志，一般叫做Assorted Magazine，打包下载。
