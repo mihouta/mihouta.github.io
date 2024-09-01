@@ -18,3 +18,5 @@ title: 重燃折腾博客的热情及热情之火的熄灭
 - https://giscus.app/zh-CN
 - https://twikoo.js.org/
 - https://github.com/walinejs/waline
+
+大半天之后，我回到了最初，写下了这一篇短暂总结。出于极简，甚至都没有用到 git 命令行或者客户端，直接在 github 后台的网页编辑器写来了这篇小文。这就是我理想中的超低成本维护。
