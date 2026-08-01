@@ -7,7 +7,7 @@ export default defineAstroPaperConfig({
     description: "记录技术、学习与生活。",
     author: "mihouta",
     profile: "https://github.com/mihouta",
-    ogImage: "default-og.jpg",
+    ogImage: "og.png",
     lang: "zh-cn",
     timezone: "Asia/Shanghai",
     dir: "ltr",
