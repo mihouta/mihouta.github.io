@@ -33,26 +33,9 @@ const homePath = getRelativeLocaleUrl(locale, "");
     class="app-layout"
   >
     <section id="hero" class="border-border border-b pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        你好 👋
-      </h1>
-      <a
-        target="_blank"
-        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
-        class="inline-block"
-        aria-label="RSS Feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="stroke-accent scale-125 stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
 
       <p>
-        欢迎来到我的个人博客。这里会记录技术实践、学习笔记，以及生活中的思考。
+        欢迎来到我的个人博客。在 AI 的时代，试图留下思考与尝试的痕迹。
       </p>
       <p class="mt-2">
         这个站点使用{" "}
