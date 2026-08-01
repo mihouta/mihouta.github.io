@@ -24,7 +24,18 @@ const t = useTranslations(locale);
 
 const posts = await getCollection("posts");
 const filteredPosts = posts.filter(postFilter);
-const monthFormatter = new Intl.DateTimeFormat(locale, { month: "long" });
+const archiveYearFormatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  timeZone: config.site.timezone,
+});
+const archiveMonthFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "numeric",
+  timeZone: config.site.timezone,
+});
+const monthNameFormatter = new Intl.DateTimeFormat(locale, {
+  month: "long",
+  timeZone: config.site.timezone,
+});
 ---
 
 <Layout title={`${t.pages.archivesTitle} | ${config.site.title}`}>
@@ -36,7 +47,7 @@ const monthFormatter = new Intl.DateTimeFormat(locale, { month: "long" });
     {
       Object.entries(
         getPostsByGroupCondition(filteredPosts, post =>
-          post.data.pubDatetime.getFullYear()
+          archiveYearFormatter.format(post.data.pubDatetime)
         )
       )
         .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
@@ -47,7 +58,8 @@ const monthFormatter = new Intl.DateTimeFormat(locale, { month: "long" });
             {Object.entries(
               getPostsByGroupCondition(
                 yearGroup,
-                post => post.data.pubDatetime.getMonth() + 1
+                post =>
+                  archiveMonthFormatter.format(post.data.pubDatetime)
               )
             )
               .sort(([monthA], [monthB]) => Number(monthB) - Number(monthA))
@@ -55,8 +67,8 @@ const monthFormatter = new Intl.DateTimeFormat(locale, { month: "long" });
                 <div class="flex flex-col sm:flex-row">
                   <div class="mt-6 min-w-36 text-lg sm:my-6">
                     <span class="font-bold">
-                      {monthFormatter.format(
-                        new Date(2000, Number(month) - 1, 1)
+                      {monthNameFormatter.format(
+                        new Date(Date.UTC(2000, Number(month) - 1, 15, 12))
                       )}
                     </span>
                     <sup class="text-muted-foreground text-xs">
