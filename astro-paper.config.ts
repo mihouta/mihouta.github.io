@@ -3,7 +3,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 export default defineAstroPaperConfig({
   site: {
     url: "https://mihouta.github.io/",
-    title: "mihouta 的博客",
+    title: "行舟知水",
     description: "记录技术、学习与生活。",
     author: "mihouta",
     profile: "https://github.com/mihouta",
