@@ -1,7 +1,7 @@
 ---
 title: '先跑一段时间才知道后面怎么样'
-pubDatetime: 2026-08-06T17:07:00+08:00
-updatedDatetime: 2026-08-06T17:07:00+08:00
+pubDatetime: 2026-08-05T17:07:00+08:00
+modDatetime: 2026-08-05T17:07:00+08:00
 tags:
   - 随想
 draft: false
