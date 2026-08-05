@@ -32,6 +32,7 @@ export default {
     featured: "Featured",
     recentPosts: "Recent Posts",
     allPosts: "All Posts",
+    rssSubscribe: "Subscribe via RSS",
   },
   footer: {
     copyright: "Copyright",

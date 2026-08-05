@@ -1,7 +1,6 @@
 ---
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
-import { getRelativeLocaleUrl } from "astro:i18n";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
 import config from "@/config";
@@ -24,10 +23,7 @@ const {
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
-const rssHref = getRelativeLocaleUrl(
-  Astro.currentLocale ?? config.site.lang,
-  "rss.xml"
-);
+const rssHref = new URL(getAssetPath("rss.xml"), Astro.site);
 ---
 
 <!doctype html>
@@ -77,7 +73,7 @@ const rssHref = getRelativeLocaleUrl(
       rel="alternate"
       type="application/rss+xml"
       title={site.title}
-      href={new URL(rssHref, Astro.site)}
+      href={rssHref}
     />
 
     <!-- Filled at runtime by theme.ts to match the current background colour -->

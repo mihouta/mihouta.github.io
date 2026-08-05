@@ -10,6 +10,7 @@ import Socials from "@/components/Socials.astro";
 import Card from "@/components/Card.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
+import { getAssetPath } from "@/utils/withBase";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
 
@@ -33,10 +34,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
     class="app-layout"
   >
     <section id="hero" class="border-border border-b pt-8 pb-6">
-
-      <p>
-        欢迎来到我的个人博客。在 AI 的时代，试图留下思考与尝试的痕迹。
-      </p>
+      <p>欢迎来到我的个人博客。在 AI 的时代，试图留下思考与尝试的痕迹。</p>
       <p class="mt-2">
         这个站点使用{" "}
         <LinkButton
@@ -64,10 +62,18 @@ const homePath = getRelativeLocaleUrl(locale, "");
       )
     }
 
-    <div class="my-8 text-center">
+    <div class="my-8 flex items-center justify-center gap-6 text-center">
       <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
         {t.home.allPosts}
         <IconArrowRight class="inline-block rtl:-rotate-180" />
+      </LinkButton>
+      <LinkButton
+        href={getAssetPath("rss.xml")}
+        title={t.home.rssSubscribe}
+        aria-label={t.home.rssSubscribe}
+      >
+        <IconRss class="inline-block size-5" />
+        {t.home.rssSubscribe}
       </LinkButton>
     </div>
   </main>
