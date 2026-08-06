@@ -1,0 +1,26 @@
+---
+import { PUBLIC_GOOGLE_ANALYTICS_ID } from "astro:env/client";
+
+const configuredId = PUBLIC_GOOGLE_ANALYTICS_ID?.trim() ?? "";
+const measurementId = /^G-[A-Z0-9]+$/.test(configuredId) ? configuredId : "";
+const shouldLoadAnalytics = import.meta.env.PROD && measurementId.length > 0;
+const initializationScript = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "${measurementId}");
+`;
+---
+
+{
+  shouldLoadAnalytics && (
+    <>
+      <script
+        is:inline
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`}
+      />
+      <script is:inline set:html={initializationScript} />
+    </>
+  )
+}
